@@ -1,0 +1,27 @@
+{% extends 'login.html' %}
+
+{% block content %}
+<h3> REGISTER</h3>
+{% with messages=get_flashed_messages() %}
+{% if message %}
+{% for message in messages%}
+  <h2 style="color:red">{{message}}</h2>
+ {% endfor %}
+{% endif %}
+{% endwith %}
+<form method="post">
+    <input name="name" type="text" placeholder="name"/>
+    <input name="username" type="text" placeholder="username"/>
+    <input  name="password" type="password" placeholder="password"/>
+    <input name="email" type="text" placeholder="email"/>
+    <label for="utype">User Type</label>
+    <select name="utype" id="">
+        <option value="teacher">Teacher</option>
+        <option value="Student">Student</option>
+    </select>
+
+    <button name="submit" type="submit">create</button>
+    <p class="message">Already registered? <a href="#">Submit</a></p>
+  </form>
+  you have an account click <a href="/">Here</a>
+{%endblock%}
